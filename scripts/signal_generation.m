@@ -29,8 +29,8 @@ d_long_x = calc_t_prime(long_x); % Derivative Lattice
 p_signal = greconv2(y, x, long_x, d_long_x, xx);
 
 % Fourier Transform
-fft_arr = abs(fftshift(fft(detrend(p_signal))));
+fft_arr = mfft(p_signal);
 
 %% Figures:
-% figure(1); plot(p_signal);
-% figure(2); plot(fft_arr); xlim([0 length(fft_arr)]);
+figure(1); plot(p_signal);
+figure(2); plot(fft_arr); xlim([0 length(fft_arr)]);
