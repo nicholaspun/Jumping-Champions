@@ -14,15 +14,15 @@ lp_length = num_primes + tails;
 %% Implementation:
 % Construction of prime lattices and other arrays:
 primes_arr = nthprime(1:num_primes); 
-extended_domain = [fliplr(-1 * primes_arr(1:500)) primes_arr];
+extended_primes = [fliplr(-1 * primes_arr(1:500)) primes_arr];
 
-sample_domain = primes_arr(1:dom_primes); % Define the actual domain that the primes run through (without the tails)
+dom = primes_arr(1:dom_primes); % Define the actual domain that the primes run through (without the tails)
 samps = ones(1, dom_primes); % set the amplitudes 
-new_domain = 1:max(sample_domain); % Define the new domain (Every integer value from 1 to the highest prime)
-d_extended_domain = calc_t_prime(extended_domain); % Derivative Lattice 
+xx = 1:max(dom); % Define the new domain (Every integer value from 1 to the highest prime)
+d_long_x = calc_t_prime(extended_primes); % Derivative Lattice 
 
 % Reconstruction:
-p_signal = greconv2(samps, sample_domain, extended_domain, d_extended_domain, new_domain);
+p_signal = greconv2(samps, dom, extended_primes, d_long_x, xx);
 
 % Fourier Transform
 fft_arr = mfft(p_signal);
