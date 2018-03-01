@@ -12,7 +12,7 @@ function sig = getPoissonDistributedSignal(seq)
     
     sig_main = genSignal(seq_without_tails);
     
-    sig = [-1 * fliplr(sig_main), sig_main, genSignal(seq_tails)];
+    sig = [-1 * fliplr(sig_main(1:500)), sig_main, genSignal(seq_tails)];
 end
 
 function sig = genSignal(seq)
