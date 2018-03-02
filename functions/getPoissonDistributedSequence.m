@@ -10,9 +10,7 @@ function seq = getPoissonDistributedSequence(subjectSeq)
     seq_without_tails = subjectSeq(1:end-500);
     seq_tails = subjectSeq(end-499:end);
     
-    sig_main = generatePoissonDistributedSequence(seq_without_tails);
-    
-    seq = [-1 * fliplr(sig_main(1:500)), sig_main, generatePoissonDistributedSequence(seq_tails)];
+    seq = [generatePoissonDistributedSequence(seq_without_tails), generatePoissonDistributedSequence(seq_tails)];
 end
 
 function sig = generatePoissonDistributedSequence(seq)
