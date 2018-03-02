@@ -1,22 +1,19 @@
 %% Description: 
 
 %% Useful Constants: 
-maxSquare = 100; % Change this number to change the amount of primes in the signal 
+maxSquare = 500; 
 
 % DO NOT CHANGE! 
 tails = 500;
 num_primes = maxSquare + tails;
-lp_length = num_primes + tails;
 % DO NOT CHANGE! 
 
 %% Implementation:
-seq = getSumsOfSquaresSignal(maxSquare);
+seq = getSquaresAndDoubledSquaresSignal(maxSquare);
+sample_domain = seq(1:end-500);
+extended_domain = [-1 * fliplr(seq(1:500)), seq];
 
-extended_domain = getPoissonDistributedSignal(nthprime(1:num_primes));
-disp(length(extended_domain));
-sample_domain = extended_domain(501:end-500);
-
-samps = ones(1, maxSquare); % set the amplitudes 
+samps = ones(1, length(sample_domain)); % set the amplitudes 
 new_domain = 1:max(sample_domain); % Define the new domain (Every integer value from 1 to the highest prime)
 d_extended_domain = calc_t_prime(extended_domain); % Derivative Lattice 
 
