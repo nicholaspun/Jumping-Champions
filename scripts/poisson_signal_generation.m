@@ -1,6 +1,4 @@
 %% Description: 
-% This is the script used to produce the poisson-distrbuted "prime signals" using
-% generalized sampling theory.
 
 %% Useful Constants: 
 dom_primes = 1000; % Change this number to change the amount of primes in the signal 
