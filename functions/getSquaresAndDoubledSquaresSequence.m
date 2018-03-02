@@ -1,4 +1,4 @@
-function sig = getSquaresAndDoubledSquaresSignal(n)
+function seq = getSquaresAndDoubledSquaresSequence(n)
 % getSquaresAndDoubledSquaresSignal: 
 %
 % Inputs:
@@ -11,6 +11,6 @@ function sig = getSquaresAndDoubledSquaresSignal(n)
     double_squares = squares.*2;
     
     combined_vector = unique([squares, double_squares]);
-    sig = combined_vector(combined_vector <= (n+1)^2);
+    seq = combined_vector(combined_vector <= (n+1)^2);
 end
 

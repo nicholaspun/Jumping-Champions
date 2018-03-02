@@ -9,7 +9,7 @@ num_primes = maxSquare + tails;
 % DO NOT CHANGE! 
 
 %% Implementation:
-seq = getSquaresAndDoubledSquaresSignal(maxSquare);
+seq = getSquaresAndDoubledSquaresSequence(maxSquare);
 sample_domain = seq(1:end-500);
 extended_domain = [-1 * fliplr(seq(1:500)), seq];
 

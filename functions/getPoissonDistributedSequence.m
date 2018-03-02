@@ -1,4 +1,4 @@
-function sig = getPoissonDistributedSignal(seq)
+function seq = getPoissonDistributedSequence(subjectSeq)
 % getPoissonDistributedSignal: 
 %
 % Inputs:
@@ -7,15 +7,15 @@ function sig = getPoissonDistributedSignal(seq)
 % Output:
 %  sig - Array 
 %  
-    seq_without_tails = seq(1:end-500);
-    seq_tails = seq(end-499:end);
+    seq_without_tails = subjectSeq(1:end-500);
+    seq_tails = subjectSeq(end-499:end);
     
-    sig_main = genSignal(seq_without_tails);
+    sig_main = generatePoissonDistributedSequence(seq_without_tails);
     
-    sig = [-1 * fliplr(sig_main(1:500)), sig_main, genSignal(seq_tails)];
+    seq = [-1 * fliplr(sig_main(1:500)), sig_main, generatePoissonDistributedSequence(seq_tails)];
 end
 
-function sig = genSignal(seq)
+function sig = generatePoissonDistributedSequence(seq)
 % genSignal: 
 %
 % Inputs:

@@ -10,7 +10,7 @@ lp_length = num_primes + tails;
 % DO NOT CHANGE! 
 
 %% Implementation:
-extended_domain = getPoissonDistributedSignal(nthprime(1:num_primes));
+extended_domain = getPoissonDistributedSequence(nthprime(1:num_primes));
 disp(length(extended_domain));
 sample_domain = extended_domain(501:end-500);
 
