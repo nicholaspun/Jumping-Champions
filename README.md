@@ -1,5 +1,8 @@
 # Summer-Research-2016
 
+(This README is out of date .... updating it soon)
+
+
 This repository contains relevant scripts and functions used to create prime signals using generalized sampling theory. The code is written in MATLAB.
 
 The following is a quick rundown of the contents of each folder:
