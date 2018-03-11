@@ -38,6 +38,7 @@ function yy = reconstruct(y, x, xx)
     yy = ones(1, xxlen);
     for a = 1:xxlen
         % for each x-value in the new domain, sinc interpolate
+        fprintf("%d/%d\n", a, xxlen)
         yy(a) = y * sinc(f * (xx(a) - x))'; 
     end
 end
