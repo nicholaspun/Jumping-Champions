@@ -1,7 +1,7 @@
 %% Description: 
 
 %% Useful Constants: 
-maxSquare = 400; 
+maxSquare = 750; 
 
 %% Squares and Double Squares:
 seq = getSquaresAndDoubledSquaresSequence(maxSquare);
@@ -23,7 +23,22 @@ fft_poisson_arr = mfft(poisson_signal);
 
 
 %% Figures:
-figure(1); plot(sig);
-figure(2); plot(fft_arr); xlim([0 length(fft_arr)]);
-figure(3); plot(poisson_signal);
-figure(4); plot(fft_poisson_arr); xlim([0 length(fft_poisson_arr)]);
+figure(1); 
+subplot(2,1,1);
+plot(sig);
+set(gca,'FontSize',24);
+subplot(2,1,2);
+plot(poisson_signal);
+set(gca,'FontSize',24);
+
+figure(2); 
+subplot(2,1,1);
+plot(fft_arr);
+set(gca,'FontSize',24);
+xlim([length(fft_arr)/2 length(fft_arr)]);
+subplot(2,1,2);
+plot(fft_poisson_arr);
+set(gca,'FontSize',24);
+xlabel("Frequency");
+ylabel("Amplitude");
+xlim([length(fft_poisson_arr)/2 length(fft_poisson_arr)]);
