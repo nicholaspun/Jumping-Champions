@@ -1,3 +1,0 @@
-set(gca,'FontSize',18);
-xlabel("Frequency");
-ylabel("Amplitude"
