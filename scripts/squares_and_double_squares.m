@@ -33,12 +33,13 @@ set(gca,'FontSize',24);
 
 figure(2); 
 subplot(2,1,1);
-plot(fft_arr);
+%plot(fft_arr);
+semilogx(fft_arr(length(fft_arr)/2:end));
 set(gca,'FontSize',24);
-xlim([length(fft_arr)/2 length(fft_arr)]);
+%xlim([length(fft_arr)/2 length(fft_arr)]);
 subplot(2,1,2);
-plot(fft_poisson_arr);
+semilogx(fft_poisson_arr(length(fft_poisson_arr)/2:end));
 set(gca,'FontSize',24);
 xlabel("Frequency");
 ylabel("Amplitude");
-xlim([length(fft_poisson_arr)/2 length(fft_poisson_arr)]);
+%xlim([length(fft_poisson_arr)/2 length(fft_poisson_arr)]);
