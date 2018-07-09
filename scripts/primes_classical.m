@@ -5,9 +5,8 @@ num_primes = 50000; % Change this number to change the amount of primes in the s
 
 %% Primes:
 primes_arr = nthprime(1:num_primes); 
-domain = 1:max(primes_arr);
-domain(isprime(domain)) = 1;
-domain(~isprime(domain) & domain ~=1) = 0;
+domain = zeros(1, max(primes_arr));
+domain(primes_arr) = 1;
 
 % Reconstructionr
 prime_signal = reconstruct(domain, 1:max(primes_arr), 1:0.5:max(primes_arr));
